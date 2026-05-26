@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devinette | nombre</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <form>
+        <div class="contener">
+            <h1> Un nombre secret est caché entre <strong>1</strong> et <strong>100</strong>. <br> À vous de le deviner
+                ! </h1>
+            <div class="grup">
+                <input id="champ" type="number" min="1" max="100" required>
+                <button onclick="afficherReponse()" class="btn" type="button">RECHERCHER</button>
+            </div>
+            <div id="text"></div>
+        </div>
+    </form>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
