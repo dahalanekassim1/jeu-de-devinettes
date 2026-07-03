@@ -4,7 +4,7 @@ function afficherReponse() {
     const valInput = document.querySelector('#champ').value;
     const textValeur = document.querySelector('#text');
 
-    document.querySelector('#champ').innerHTML = ''
+    document.querySelector('#champ').innerHTML = '';
 
     if (valInput === '') {
         alert('Vous devez renseigner ce champ ');
