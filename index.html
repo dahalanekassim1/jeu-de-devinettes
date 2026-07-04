@@ -10,15 +10,17 @@
 
 <body>
 
-    <form>
+    <form class="form">
         <div class="contener">
-            <h1> Un nombre secret est caché entre <strong>1</strong> et <strong>100</strong>. <br> À vous de le deviner
-                ! </h1>
-            <div class="grup">
-                <input id="champ" type="number" min="1" max="100" required>
-                <button onclick="afficherReponse()" class="btn" type="button">RECHERCHER</button>
+            <p>Devinez le nombre secret caché entre <strong>1</strong> et <strong>100</strong></p>
+            <div class="group">
+                <input type="number" id="champ" class="form-group" min="1" max="100">
+                <span class="form-group" id="span">ESSAIES : </span>
             </div>
-            <div id="text"></div>
+            <div id="message"></div>
+            <div class="btn">
+                <button type="button" id="btn" class="form-group" onclick="afficherReponse()">RECHERCHER</button>
+            </div>
         </div>
     </form>
 

@@ -1,26 +1,47 @@
 const nbrSecret = 77;
 
+let cpt = 0;
+
 function afficherReponse() {
-    const valInput = document.querySelector('#champ').value;
-    const textValeur = document.querySelector('#text');
+    const elementInput = document.getElementById('champ');
+    const msg = document.getElementById('message');
+    const valSpan = document.getElementById('span');
 
-    document.querySelector('#champ').innerHTML = '';
+    let valInput = elementInput.value.trim();
 
-    if (valInput === '') {
-        alert('Vous devez renseigner ce champ ');
+    if (valInput === "") {
+        alert("veuillez renseigner se champs");
+        return;
+    }
+    
+    valInput = Number(valInput);
+    msg.innerHTML = "";
+    cpt++;
+    
+    if (valInput < nbrSecret) {
+        msg.innerHTML = `<div id="message">${valInput} est plus petit</div>`;
+        msg.classList.add('echoue');
     }
     else if (valInput > nbrSecret) {
-        document.getElementById('text').innerHTML = (`✖️ ECHOUÉ ! LE NOMBRE ${valInput} EST PLUS GRAND <br>`);
-        textValeur.classList.add('notResponse');
-    }
-    else if (valInput < nbrSecret) {
-        document.querySelector('#text').innerHTML = (`✖️ ECHOUÉ ! LE NOMBRE ${valInput} EST PLUS PETIT <br>`);
-        textValeur.classList.add('notResponse');
+        msg.innerHTML = `<div id="message">${valInput} est plus grand</div>`;
+        msg.classList.add('echoue');
     }
     else {
-        document.querySelector('#text').innerHTML = (`✅ BRAVO ! VOUS AVEZ TROUVE 👏`);
-        textValeur.classList.add('response');
+        msg.innerHTML = `<div id="message">BRAVO ! vous avez trouvez</div>`;
+        msg.classList.add('trouve');
     }
+    
+    valSpan.innerHTML = `<span class="form-group" id="span">ESSAIES : ${cpt}</span>`; 
+
+    if (valInput === nbrSecret) {
+        elementInput.disabled = true;
+    }
+    if (cpt === 3) {
+        elementInput.disabled = true;
+        msg.innerHTML = `<div id="message">Nombre de tentative terminé</div>`;
+    }
+
+    elementInput.value= "";
 }
 
 
