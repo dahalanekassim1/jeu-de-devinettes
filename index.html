@@ -12,15 +12,20 @@
 
     <form class="form">
         <div class="contener">
-            <p>Devinez le nombre secret caché entre <strong>1</strong> et <strong>100</strong></p>
+            <div style="text-decoration: underline; font-style: italic; font-weight: bold;">Temps : </div>
+            <div class="control">
+                <div class="chrono" style="font-size: 20px;"> 00 : 00</div>
+                <button type="button" class="btn-restart" id="btn-restart" onclick="recommencer()">Restart</button>
+            </div>
+            <p>Devinez le nombre caché entre <strong>1</strong> et <strong>100</strong></p>
             <div class="group">
                 <input type="number" id="champ" class="form-group" min="1" max="100">
-                <span class="form-group" id="span">ESSAIES : </span>
+                <span class="form-group" id="span">ESSAI(S) : 0</span>
+            </div>
+            <div class="btn">
+                <button type="button" id="btn" class="form-group" onclick="afficherReponse()">VALIDER</button>
             </div>
             <div id="message"></div>
-            <div class="btn">
-                <button type="button" id="btn" class="form-group" onclick="afficherReponse()">RECHERCHER</button>
-            </div>
         </div>
     </form>
 

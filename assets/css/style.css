@@ -14,9 +14,9 @@
 }
 
 body {
-    background: linear-gradient(100deg,
+    background: linear-gradient(135deg,
         var(--black), 
-        var(--red-d));
+        var(--blue));
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     color: var(--blanc);
@@ -41,7 +41,7 @@ p {
     padding: 25px;
     box-shadow: 0 0 10px var(--black);
     border-radius: 5px;
-    width: 100%;
+    width: 90%;
     max-width: 500px;
 }
 
@@ -75,11 +75,11 @@ span {
 }
 input:focus {
     outline: none;
-   box-shadow: 0 0 8px var(--red-d);
-   transition: 0.3s all;
+   box-shadow: 0 0 10px var(--red-d);
+   transition: .3s all;
 }
 
-button {
+#btn {
     width: 100%;
     cursor: pointer;
     margin-top: 1.5rem;
@@ -88,7 +88,7 @@ button {
     font-weight: bold;
     color: var(--blanc);
 }
-button:hover {
+#btn:hover {
     background: #170dca;
     transition: 0.3s all;
     transform: translateX(-1px);
@@ -114,5 +114,67 @@ button:hover {
     .form .contener {
         padding: 15px;
     }
+}
+
+form .control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+/* img {
+     height: auto;
+    width: 20%;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.1);
+    transition:all .3s ease;
+} */
+
+.btn-restart {
+    border-radius: 20%;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+   background-color: var(--red-d);
+   color: var(--blanc);
+}
+
+
+
+.btn-restart:hover {
+    transform: scale(1.1);
+    transition: all .3s ease;
+}
+
+.btnForce {
+    transition: all .3s ease;
+
+    animation: btn 2s infinite;
+   text-decoration: underline;
+}
+
+@keyframes btn{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+}
+
+.btn-chrono {
+    color: var(--red-d);
+    animation: chrono 2s infinite;
+    transition: all .3s ease;
+}
+@keyframes chrono {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
 }
 
