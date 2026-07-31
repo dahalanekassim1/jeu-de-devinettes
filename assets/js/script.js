@@ -56,7 +56,7 @@ const valChrono = document.querySelector('.chrono');
 const btnRestart = document.getElementById('btn-restart');
 
 function demarrerChrono() {
-    heure = setTimeout(demarrerChrono, 100);
+    heure = setTimeout(demarrerChrono, 1000);
     if (min === 1) {
         min = 0;
         seconde = 60;
