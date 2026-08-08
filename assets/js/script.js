@@ -1,4 +1,4 @@
-const nbrSecret = 77;
+const nbrSecret = Math.floor(Math.random() * 100) + 1;
 let cpt = 0;
 
 const elementInput = document.getElementById('champ');
@@ -38,12 +38,13 @@ function afficherReponse() {
         msg.classList.add('trouve');
 
         bouton.disabled = true;
+
     }
 
     valSpan.innerHTML = `<span class="form-group" id="span">ESSAIS : ${cpt}</span>`;
 
     elementInput.value = "";
-}   
+}
 
 
 
@@ -62,12 +63,12 @@ function demarrerChrono() {
         seconde = 60;
     }
     if (seconde > 0) {
-        btnRestart.disabled=true;
+        btnRestart.disabled = true;
         seconde--;
-    } 
+    }
 
     if (seconde === 0) {
-        btnRestart.disabled=false;
+        btnRestart.disabled = false;
         elementInput.disabled = true;
         bouton.disabled = true;
 
@@ -78,14 +79,17 @@ function demarrerChrono() {
         bouton.textContent = `Temps ecoulé`;
 
         msg.innerHTML = `<div id="message">Echoué ✖️  en ${cpt} essai(s)</div>`;
-        msg.innerHTML += `<div id="message">Temps : ${min}min : ${seconde}s => restant</div>`; 
+        msg.innerHTML += `<div id="message">Temps : ${min}min : ${seconde}s => restant</div>`;
         msg.classList.add('echoue');
     }
 
     if (seconde < 10) {
         valChrono.style.color = 'red';
         valChrono.classList.add('btn-chrono');
-    }else {
+        if (seconde === 0) {
+            valChrono.className="";
+        }
+    } else {
         valChrono.style.color = 'blue';
     }
 
